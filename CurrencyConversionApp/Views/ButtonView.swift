@@ -36,14 +36,5 @@ class ButtonView: UIView {
         self.layer.shadowRadius = 3
         
     }
-    func setUpUIButton() {
-
-        let buttonConvert = UIButton(frame: CGRect(x: 65,
-                                                   y: 270,
-                                                   width: 136,
-                                                   height: 59))
-
-        
-    }
 
 }

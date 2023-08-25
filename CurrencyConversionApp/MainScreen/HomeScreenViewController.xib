@@ -11,7 +11,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeScreenViewController" customModule="CurrencyConversionApp" customModuleProvider="target">
             <connections>
                 <outlet property="homeView" destination="byJ-Sq-Ycg" id="mJ4-Jy-vhw"/>
+                <outlet property="mainView" destination="ai5-ro-Yhg" id="9Ve-pK-A4A"/>
                 <outlet property="scrollView" destination="aD1-79-0zq" id="S89-ZF-rwZ"/>
+                <outlet property="segmentedControl" destination="mcM-dM-onu" id="I6N-On-BMG"/>
                 <outlet property="tableView" destination="ewR-fn-XoF" id="ud6-cR-OsM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -26,64 +28,81 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ewR-fn-XoF">
-                            <rect key="frame" x="0.0" y="0.0" width="606.33333333333337" height="852"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byJ-Sq-Ycg">
-                            <rect key="frame" x="0.0" y="0.0" width="606.33333333333337" height="274"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="274"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="lKB-59-Yyi">
-                                    <rect key="frame" x="0.0" y="0.0" width="606.33333333333337" height="283"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="396" height="283"/>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ConCurrency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zB4-Mv-Bc6">
-                                    <rect key="frame" x="8" y="67" width="377" height="40"/>
-                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="24"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jme-tQ-FN2">
-                                    <rect key="frame" x="8" y="121" width="377" height="40"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Currency Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jme-tQ-FN2">
+                                    <rect key="frame" x="8" y="128" width="377" height="24"/>
                                     <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="24"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check live foreign currency exchange rates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJ2-au-cdS">
-                                    <rect key="frame" x="8" y="169" width="377" height="33"/>
+                                    <rect key="frame" x="8" y="162" width="377" height="20.333333333333343"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="ConCurrency" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zB4-Mv-Bc6">
+                                    <rect key="frame" x="8" y="80" width="377" height="24"/>
+                                    <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="24"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="Jme-tQ-FN2" firstAttribute="leading" secondItem="byJ-Sq-Ycg" secondAttribute="leading" constant="8" id="1QI-NB-E0U"/>
-                                <constraint firstAttribute="bottom" secondItem="zB4-Mv-Bc6" secondAttribute="bottom" constant="167" id="2dn-Gc-5L2"/>
-                                <constraint firstItem="zB4-Mv-Bc6" firstAttribute="leading" secondItem="byJ-Sq-Ycg" secondAttribute="leading" constant="8" id="5fH-Eg-3FB"/>
-                                <constraint firstItem="lKB-59-Yyi" firstAttribute="top" secondItem="byJ-Sq-Ycg" secondAttribute="top" id="5pb-Lq-RvX"/>
-                                <constraint firstAttribute="trailing" secondItem="zB4-Mv-Bc6" secondAttribute="trailing" constant="221.33333333333334" id="AWP-Wd-wGM"/>
-                                <constraint firstAttribute="bottom" secondItem="zJ2-au-cdS" secondAttribute="bottom" constant="72" id="Ejx-p0-Mwq"/>
-                                <constraint firstItem="Jme-tQ-FN2" firstAttribute="top" secondItem="zB4-Mv-Bc6" secondAttribute="bottom" constant="14" id="Nue-ox-efU"/>
-                                <constraint firstAttribute="trailing" secondItem="Jme-tQ-FN2" secondAttribute="trailing" constant="221.33333333333337" id="PSb-3M-QKT"/>
-                                <constraint firstAttribute="trailing" secondItem="zJ2-au-cdS" secondAttribute="trailing" constant="221.33333333333337" id="a0c-8m-FvS"/>
-                                <constraint firstItem="zJ2-au-cdS" firstAttribute="leading" secondItem="byJ-Sq-Ycg" secondAttribute="leading" constant="8" id="ccs-cN-uLj"/>
-                                <constraint firstAttribute="trailing" secondItem="lKB-59-Yyi" secondAttribute="trailing" id="fGC-Ye-nda"/>
-                                <constraint firstAttribute="bottom" secondItem="Jme-tQ-FN2" secondAttribute="bottom" constant="113" id="gS0-jR-Olx"/>
-                                <constraint firstItem="zJ2-au-cdS" firstAttribute="top" secondItem="zB4-Mv-Bc6" secondAttribute="bottom" constant="62" id="jVE-Sr-xqd"/>
-                                <constraint firstItem="lKB-59-Yyi" firstAttribute="leading" secondItem="byJ-Sq-Ycg" secondAttribute="leading" id="kVc-iZ-rYS"/>
-                                <constraint firstItem="zB4-Mv-Bc6" firstAttribute="top" secondItem="byJ-Sq-Ycg" secondAttribute="top" constant="67" id="mwr-db-GPw"/>
-                                <constraint firstAttribute="bottom" secondItem="lKB-59-Yyi" secondAttribute="bottom" constant="-9" id="vjC-2x-cGV"/>
+                                <constraint firstAttribute="bottom" secondItem="lKB-59-Yyi" secondAttribute="bottom" constant="-9" id="09Y-pp-SYe"/>
+                                <constraint firstItem="zJ2-au-cdS" firstAttribute="top" secondItem="Jme-tQ-FN2" secondAttribute="bottom" constant="10" id="0YT-UM-3UU"/>
+                                <constraint firstItem="zJ2-au-cdS" firstAttribute="top" secondItem="Jme-tQ-FN2" secondAttribute="bottom" constant="10" id="A29-cg-2Rz"/>
+                                <constraint firstAttribute="trailing" secondItem="Jme-tQ-FN2" secondAttribute="trailing" constant="8" id="FY9-Yl-Pj7"/>
+                                <constraint firstAttribute="trailing" secondItem="zB4-Mv-Bc6" secondAttribute="trailing" constant="8" id="MP1-n3-Kdc"/>
+                                <constraint firstAttribute="bottom" secondItem="zJ2-au-cdS" secondAttribute="bottom" constant="91.670000000000002" id="aEq-LP-DPv"/>
+                                <constraint firstItem="zB4-Mv-Bc6" firstAttribute="leading" secondItem="byJ-Sq-Ycg" secondAttribute="leading" constant="8" id="bIP-vN-dCj"/>
+                                <constraint firstItem="Jme-tQ-FN2" firstAttribute="leading" secondItem="byJ-Sq-Ycg" secondAttribute="leading" constant="8" id="ckq-65-Ul3"/>
+                                <constraint firstItem="Jme-tQ-FN2" firstAttribute="top" secondItem="zB4-Mv-Bc6" secondAttribute="bottom" constant="24" id="d1Q-Bm-mqJ"/>
+                                <constraint firstItem="lKB-59-Yyi" firstAttribute="top" secondItem="byJ-Sq-Ycg" secondAttribute="top" id="dbx-1E-L1X"/>
+                                <constraint firstAttribute="trailing" secondItem="lKB-59-Yyi" secondAttribute="trailing" constant="-3" id="dpz-OC-X2s"/>
+                                <constraint firstItem="zB4-Mv-Bc6" firstAttribute="top" secondItem="byJ-Sq-Ycg" secondAttribute="top" constant="80" id="kL5-0X-WNC"/>
+                                <constraint firstItem="zJ2-au-cdS" firstAttribute="leading" secondItem="byJ-Sq-Ycg" secondAttribute="leading" constant="8" id="mmh-Mv-hWA"/>
+                                <constraint firstAttribute="trailing" secondItem="zJ2-au-cdS" secondAttribute="trailing" constant="8" id="o3V-l3-DBK"/>
+                                <constraint firstItem="lKB-59-Yyi" firstAttribute="leading" secondItem="byJ-Sq-Ycg" secondAttribute="leading" id="u3r-W3-HkJ"/>
                             </constraints>
+                        </view>
+                        <segmentedControl clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="mcM-dM-onu">
+                            <rect key="frame" x="25" y="268" width="343" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <segments>
+                                <segment title="Convert"/>
+                                <segment title="Compare"/>
+                            </segments>
+                        </segmentedControl>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ai5-ro-Yhg">
+                            <rect key="frame" x="0.0" y="337" width="393" height="515"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="BQb-Ft-xKZ" firstAttribute="trailing" secondItem="ewR-fn-XoF" secondAttribute="trailing" constant="-213.33333333333334" id="66Y-gG-d1y"/>
-                        <constraint firstItem="BQb-Ft-xKZ" firstAttribute="bottom" secondItem="byJ-Sq-Ycg" secondAttribute="bottom" constant="578" id="7ne-4F-Fxn"/>
-                        <constraint firstItem="byJ-Sq-Ycg" firstAttribute="trailing" secondItem="BQb-Ft-xKZ" secondAttribute="trailing" constant="213.33333333333334" id="Ybb-cX-qKk"/>
-                        <constraint firstItem="ewR-fn-XoF" firstAttribute="top" secondItem="BQb-Ft-xKZ" secondAttribute="top" id="cKk-ZA-vEU"/>
-                        <constraint firstItem="byJ-Sq-Ycg" firstAttribute="top" secondItem="BQb-Ft-xKZ" secondAttribute="top" id="cwB-r8-1g5"/>
-                        <constraint firstItem="BQb-Ft-xKZ" firstAttribute="bottom" secondItem="ewR-fn-XoF" secondAttribute="bottom" id="hFu-FE-n6E"/>
-                        <constraint firstItem="byJ-Sq-Ycg" firstAttribute="leading" secondItem="BQb-Ft-xKZ" secondAttribute="leading" id="qCt-si-OQq"/>
-                        <constraint firstItem="ewR-fn-XoF" firstAttribute="leading" secondItem="BQb-Ft-xKZ" secondAttribute="leading" id="wXJ-RF-Jdc"/>
+                        <constraint firstItem="BQb-Ft-xKZ" firstAttribute="bottom" secondItem="byJ-Sq-Ycg" secondAttribute="bottom" constant="578" id="8F1-KM-YAt"/>
+                        <constraint firstItem="ai5-ro-Yhg" firstAttribute="width" secondItem="ewR-fn-XoF" secondAttribute="width" id="AAA-tp-do3"/>
+                        <constraint firstItem="ewR-fn-XoF" firstAttribute="leading" secondItem="BQb-Ft-xKZ" secondAttribute="leading" id="BTC-b6-KkH"/>
+                        <constraint firstItem="byJ-Sq-Ycg" firstAttribute="top" secondItem="BQb-Ft-xKZ" secondAttribute="top" id="FGE-MH-rvd"/>
+                        <constraint firstItem="ewR-fn-XoF" firstAttribute="top" secondItem="BQb-Ft-xKZ" secondAttribute="top" id="PVb-4V-tO4"/>
+                        <constraint firstItem="ai5-ro-Yhg" firstAttribute="height" secondItem="lKB-59-Yyi" secondAttribute="height" multiplier="1.81979" id="Q4V-aC-Tz9"/>
+                        <constraint firstItem="ewR-fn-XoF" firstAttribute="bottom" secondItem="BQb-Ft-xKZ" secondAttribute="bottom" id="SG4-q3-e0r"/>
+                        <constraint firstItem="ai5-ro-Yhg" firstAttribute="leading" secondItem="BQb-Ft-xKZ" secondAttribute="leading" id="TgB-gQ-w6c"/>
+                        <constraint firstItem="BQb-Ft-xKZ" firstAttribute="trailing" secondItem="ai5-ro-Yhg" secondAttribute="trailing" id="WB1-OT-hYu"/>
+                        <constraint firstItem="byJ-Sq-Ycg" firstAttribute="trailing" secondItem="BQb-Ft-xKZ" secondAttribute="trailing" id="hM6-tl-Va0"/>
+                        <constraint firstItem="BQb-Ft-xKZ" firstAttribute="bottom" secondItem="ai5-ro-Yhg" secondAttribute="bottom" id="kV2-dI-8iz"/>
+                        <constraint firstItem="byJ-Sq-Ycg" firstAttribute="leading" secondItem="BQb-Ft-xKZ" secondAttribute="leading" id="u9q-mt-eoQ"/>
+                        <constraint firstItem="ewR-fn-XoF" firstAttribute="trailing" secondItem="BQb-Ft-xKZ" secondAttribute="trailing" id="xzF-HL-bHX"/>
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="3DE-dB-40o"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="BQb-Ft-xKZ"/>
