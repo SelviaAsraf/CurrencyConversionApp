@@ -7,34 +7,24 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeScreenViewController: UIViewController {
     
     
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var homeView: UIView!
-
     
+    let compareView = CompareView()
+    let convertView = ConvertView()
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        tableView.delegate = self
         view.addSubview(scrollView)
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-        scrollView.addSubview(tableView)
-        tableView.addSubview(homeView)
+        navigationController?.setNavigationBarHidden(true, animated: false)
         // Add the segmented control to the view
         homeView.addSubview(segmentedControl)
-        tableView.addSubview(segmentedControl)
+        mainView.addSubview(segmentedControl)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             segmentedControl.centerXAnchor.constraint(equalTo: homeView.centerXAnchor),
@@ -43,20 +33,21 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             segmentedControl.heightAnchor.constraint(equalToConstant: 45) // Adjust the height
         ])
         segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
-      
         
-        
-        
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        return cell
-    }
+    
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        
+        if sender.selectedSegmentIndex == 0 {
+            mainView.addSubview(convertView)
+            
+        } else if sender.selectedSegmentIndex == 1{
+            mainView.addSubview(compareView)
+            
+        }
         print("Selected index: \(sender.selectedSegmentIndex)")
     }
-   
+    
+}
+

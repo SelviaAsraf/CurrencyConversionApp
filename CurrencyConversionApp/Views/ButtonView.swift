@@ -13,7 +13,7 @@ class ButtonView: UIView {
         super.init(frame: frame)
         commonInit()
         setUpView()
-        setUpUIButton()
+       // setUpUIButton()
     }
     
     required init?(coder aDecoder: NSCoder) {
