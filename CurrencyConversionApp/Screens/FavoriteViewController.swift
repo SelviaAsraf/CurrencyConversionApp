@@ -29,6 +29,8 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
         70
     }
     
+    @IBAction func exitScreen(_ sender: Any) {
+    }
     
 
 }

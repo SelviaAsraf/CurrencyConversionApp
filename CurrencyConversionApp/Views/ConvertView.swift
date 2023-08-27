@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DropDown
 
 class ConvertView: UIView {
     private let amountLabel = UILabel()
@@ -13,6 +14,10 @@ class ConvertView: UIView {
     private let fromLabel = UILabel()
     private let toLabel = UILabel()
     private let resultAmountLabel = UILabel()
+    private var dropDownButton = UIButton()
+    private var countryLabel = UILabel()
+    var dropDown = DropDown()
+    let country = ["egypt","swiss","hhhdh","fytdf"]
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -43,7 +48,7 @@ class ConvertView: UIView {
             amountLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 50)
         ])
         addSubview(amountTextField)
-         amountTextField = UITextField(frame: CGRect(x: 40, y: 80, width: 140, height: 50))
+        amountTextField = UITextField(frame: CGRect(x: 40, y: 80, width: 140, height: 50))
         amountTextField.backgroundColor = .systemGray6
         amountTextField.layer.cornerRadius = 20
         amountTextField.layer.masksToBounds = true
@@ -58,15 +63,35 @@ class ConvertView: UIView {
             fromLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 50)
         ])
         addSubview(amountTextField)
-         amountTextField = UITextField(frame: CGRect(x: 40, y: 80, width: 140, height: 50))
+        amountTextField = UITextField(frame: CGRect(x: 40, y: 80, width: 140, height: 50))
         amountTextField.backgroundColor = .systemGray6
         amountTextField.layer.cornerRadius = 20
         amountTextField.layer.masksToBounds = true
-
         
-   
-
+        addSubview(dropDown)
+        addSubview(dropDownButton)
+        addSubview(countryLabel)
+        dropDown = DropDown(frame: CGRect( x: 80, y: 80, width: 140, height: 50))
+        dropDownButton = UIButton(frame:  CGRect( x: 80, y: 80, width: 140, height: 50))
+        countryLabel = UILabel(frame:  CGRect( x: 80, y: 80, width: 140, height: 50))
+        dropDown.anchorView = self
+        dropDown.dataSource = country
+        dropDown.bottomOffset = CGPoint(x: 0, y: dropDown.anchorView?.plainView.bounds.height ?? 0)
+        dropDown.topOffset = CGPoint(x: 0, y: -(dropDown.anchorView?.plainView.bounds.height ?? 0) )
+        dropDown.direction = .bottom
+        dropDown.selectionAction = {(index: Int, item: String) in
+            self.countryLabel.text = self.country[index]
+            self.countryLabel.textColor = .black
+        }
+        
+        
+        
+        
+        
     }
-
-
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        dropDown.show()
+    }
+    
+    
 }
