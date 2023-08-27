@@ -39,10 +39,14 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var homeView: UIView!
     @IBOutlet weak var favouriteButton: UIButton!
+    
     var firstDropDown = DropDown()
     var secondDropDown = DropDown()
     var thirdDropDown = DropDown()
     var fourthDropDown = DropDown()
+    var currencies : [CurrencyModelElement] = []
+    let setup = setupUI()
+    
     let country = ["egypt","swiss","hhhdh","fytdf"]
     //MARK: Life Cycle
     override func viewDidLoad() {
@@ -51,19 +55,28 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         portofolioTableView.dataSource = self
         portofolioTableView.register(PortofolioTableViewCell.nib(), forCellReuseIdentifier: "PortofolioTableViewCell")
         navigationController?.setNavigationBarHidden(true, animated: false)
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            segmentedControl.centerXAnchor.constraint(equalTo: homeView.centerXAnchor),
-            segmentedControl.centerYAnchor.constraint(equalTo: homeView.centerYAnchor,constant: 150),
-            segmentedControl.widthAnchor.constraint(equalToConstant: 300), // Adjust the width
-            segmentedControl.heightAnchor.constraint(equalToConstant: 45) // Adjust the height
-        ])
-        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
-        setUpUI()
-        setUpDropDrown()
-        compareView.isHidden = true
-        firstStack.layoutIfNeeded()
         
+        setup.setUpFieldsAndlabels(field: amountField, label: firstLabel)
+        setup.setUpFieldsAndlabels(field: secondCountryField, label: secondLabel)
+        
+        setup.setUpButtons(button: dropDownButton)
+        setup.setUpButtons(button: secondDropDownButton)
+        setup.setUpButtons(button: firstTargetCurrencyVButton)
+        setup.setUpButtons(button: secondTargetCurrencyButton)
+        
+        setup.setUpDropDrown(dropDownButton: firstDropDown, view: dropView, countryName: countryName)
+        setup.setUpDropDrown(dropDownButton: secondDropDown, view: secondButtonView, countryName: secondCountryName)
+        setup.setUpDropDrown(dropDownButton: thirdDropDown, view: firstTargetCurrencyView, countryName: firstTargetCurrencyLabel)
+        setup.setUpDropDrown(dropDownButton: fourthDropDown, view: secondTargetCurrencyView, countryName: secondTargetCurrencyLabel)
+        setup.setupSegmentedControl(segmentedControl: segmentedControl, homeView: homeView)
+        
+        editMainbuttons()
+        
+        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+        
+        compareView.isHidden = true
+        
+        firstStack.layoutIfNeeded()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         7
@@ -93,62 +106,33 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBAction func addToFavorites(_ sender: Any) {
     }
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-            if sender.selectedSegmentIndex == 0 {
-                compareView.isHidden = true
-                convertView.isHidden = false
-                tableView.isHidden = false
-                mainButton.setTitle("Convert", for: .normal)
-                // Update the layout
-                firstStack.layoutIfNeeded()
-                secondStack.layoutIfNeeded()
-                
-                
-            } else {
-                convertView.isHidden = true
-                compareView.isHidden = false
-                tableView.isHidden = true
-                mainButton.setTitle("Compare", for: .normal)
-                // Update the layout
-                firstStack.layoutIfNeeded()
-                secondStack.layoutIfNeeded()
-            }
-            print("Selected index: \(sender.selectedSegmentIndex)")
+        if sender.selectedSegmentIndex == 0 {
+            compareView.isHidden = true
+            convertView.isHidden = false
+            tableView.isHidden = false
+            mainButton.setTitle("Convert", for: .normal)
+            // Update the layout
+            firstStack.layoutIfNeeded()
+            secondStack.layoutIfNeeded()
+            
+            
+        } else {
+            convertView.isHidden = true
+            compareView.isHidden = false
+            tableView.isHidden = true
+            mainButton.setTitle("Compare", for: .normal)
+            // Update the layout
+            firstStack.layoutIfNeeded()
+            secondStack.layoutIfNeeded()
+        }
+        print("Selected index: \(sender.selectedSegmentIndex)")
         
     }
-    func setUpUI() {
-        amountField.backgroundColor = .systemGray6
-        amountField.layer.cornerRadius = 15
-        amountField.layer.masksToBounds = true
-        amountField.frame.size.height = 50
-        secondCountryField.backgroundColor = .systemGray6
-        secondCountryField.layer.cornerRadius = 15
-        secondCountryField.layer.masksToBounds = true
-        secondCountryField.frame.size.height = 50
-        dropDownButton.backgroundColor = .systemGray6
-        dropDownButton.layer.cornerRadius = 15
-        dropDownButton.layer.masksToBounds = true
-        dropDownButton.frame.size.height = 70
-        secondDropDownButton.backgroundColor = .systemGray6
-        secondDropDownButton.layer.cornerRadius = 15
-        secondDropDownButton.layer.masksToBounds = true
-        secondDropDownButton.frame.size.height = 70
-        firstLabel.backgroundColor = .systemGray6
-        firstLabel.layer.cornerRadius = 15
-        firstLabel.layer.masksToBounds = true
-        firstLabel.frame.size.height = 50
-        secondLabel.backgroundColor = .systemGray6
-        secondLabel.layer.cornerRadius = 15
-        secondLabel.layer.masksToBounds = true
-        secondLabel.frame.size.height = 50
-        firstTargetCurrencyVButton.frame.size.height = 50
-        firstTargetCurrencyVButton.backgroundColor = .systemGray6
-        firstTargetCurrencyVButton.layer.cornerRadius = 15
-        firstTargetCurrencyVButton.layer.masksToBounds = true
-        secondTargetCurrencyButton.frame.size.height = 50
-        secondTargetCurrencyButton.backgroundColor = .systemGray6
-        secondTargetCurrencyButton.layer.cornerRadius = 15
-        secondTargetCurrencyButton.layer.masksToBounds = true
-        secondTargetCurrencyButton.frame.size.height = 50
+ 
+    func editMainbuttons() {
+        mainButton.layer.cornerRadius = 15
+        mainButton.layer.masksToBounds = true
+        
         favouriteButton.layer.cornerRadius = 14
         favouriteButton.layer.masksToBounds = true
         favouriteButton.frame.size.height = 35
@@ -156,49 +140,27 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         favouriteButton.layer.borderWidth = 0.5
         favouriteButton.layer.borderColor = UIColor.black.cgColor
     }
-    func setUpDropDrown() {
-        firstDropDown.anchorView = dropView
-        firstDropDown.dataSource = country
-       firstDropDown.bottomOffset = CGPoint(x: 0, y: (firstDropDown.anchorView?.plainView.bounds.height)!)
-        firstDropDown.topOffset = CGPoint(x: 0, y: -(firstDropDown.anchorView?.plainView.bounds.height)!)
-        firstDropDown.direction = .bottom
-        firstDropDown.selectionAction = {(index: Int, item: String) in
-            self.countryName.text = self.country[index]
-            self.countryName.textColor = .black
-            
+        
+    
+
+    
+    func getRatingData() {
+        NetworkManager.shared.request(url:"currencyconversion-production-38ba.up.railway.app/currency/") { [weak self] (result: Result<[CurrencyModelElement], Error>) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let currencies):
+                self.currencies = currencies
+                print("currency:", currencies)
+            case .failure(let error):
+                print("Error: \(error.localizedDescription)")
+            }
         }
-        secondDropDown.anchorView = secondButtonView
-        secondDropDown.dataSource = country
-        secondDropDown.bottomOffset = CGPoint(x: 0, y: (secondDropDown.anchorView?.plainView.bounds.height)!)
-        secondDropDown.topOffset = CGPoint(x: 0, y: -(secondDropDown.anchorView?.plainView.bounds.height)!)
-        secondDropDown.direction = .bottom
-        secondDropDown.selectionAction = {(index: Int, item: String) in
-            self.secondCountryName.text = self.country[index]
-            self.countryName.textColor = .black
-            
-        }
-        thirdDropDown.anchorView = firstTargetCurrencyView
-        thirdDropDown.dataSource = country
-        thirdDropDown.bottomOffset = CGPoint(x: 0, y: (thirdDropDown.anchorView?.plainView.bounds.height)!)
-        thirdDropDown.topOffset = CGPoint(x: 0, y: -(thirdDropDown.anchorView?.plainView.bounds.height)!)
-        thirdDropDown.direction = .bottom
-        thirdDropDown.selectionAction = {(index: Int, item: String) in
-            self.firstTargetCurrencyLabel.text = self.country[index]
-            self.countryName.textColor = .black
-            
-        }
-        fourthDropDown.anchorView = secondTargetCurrencyView
-        fourthDropDown.dataSource = country
-        fourthDropDown.bottomOffset = CGPoint(x: 0, y: (fourthDropDown.anchorView?.plainView.bounds.height)!)
-        fourthDropDown.topOffset = CGPoint(x: 0, y: -(fourthDropDown.anchorView?.plainView.bounds.height)!)
-        fourthDropDown.direction = .bottom
-        fourthDropDown.selectionAction = {(index: Int, item: String) in
-            self.secondTargetCurrencyLabel.text = self.country[index]
-            self.countryName.textColor = .black
-            
-        }
- 
     }
+    //    func configure(model: CurrencyModelElement) {
+    //        countryImage.load(urlString: model.imageURL)
+    //        countryName.text = model.currencyCode
+    //    }
     
 }
+
 
