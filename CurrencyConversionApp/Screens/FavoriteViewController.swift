@@ -36,7 +36,7 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.layer.masksToBounds = true
         listenToCountryListener()
     }
-    
+
     //MARK: Table Attributes
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         currencies?.data.count ?? 0
@@ -45,11 +45,11 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteTableViewCell", for: indexPath) as! FavoriteTableViewCell
         cell.configure(model: (currencies?.data[indexPath.row])! )
-      //  cell.delegete = self
         cell.index = indexPath.row
         cell.isSelectedCountry = {[weak self] isSelected in
             guard let self = self else { return }
             if isSelected {
+                
                 if let selectedCurrency = currencies?.data[indexPath.row].code {
                     self.selectedCurrency.append(selectedCurrency)
                 }
@@ -69,7 +69,6 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBAction func exitScreen(_ sender: Any) {
         self.delegate?.setSelectedCurrencies(currencies: self.selectedCurrency)
         dismiss(animated: true) {
-          //  self.delegate?.setSelectedCurrencies(currencies: self.selectedCurrency)
             print(self.selectedCurrency)
         }
     }
@@ -79,9 +78,20 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
             currencies = self.viewModel.currencies
             data = self.viewModel.data
             tableView.reloadData()
+            setSelectedCells()
         }
         
     }
+    private func setSelectedCells() {
+        selectedCurrency.forEach { currency in
+            if let currencyIndex = currencies?.data.firstIndex(where: {$0.code == currency}) , let cell = tableView.cellForRow(at:IndexPath(row: currencyIndex, section: 0) ) as? FavoriteTableViewCell {
+                cell.checkButton.isSelected = true
+            }
+            
+        }
+       
+    }
+    
 }
 
 protocol FavoritesViewControllerProtocol {

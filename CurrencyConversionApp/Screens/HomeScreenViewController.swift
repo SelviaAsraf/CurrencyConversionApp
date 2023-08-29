@@ -124,7 +124,6 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PortofolioTableViewCell", for: indexPath) as! PortofolioTableViewCell
         cell.configure(model: (favoriteRateData?.data.currencies[indexPath.row])!)
-        //(currencies?.data[indexPath.row])!
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -150,6 +149,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             if mainButton.titleLabel?.text == "Convert", let from = firstCountryName.text, let to = secondCountryName.text, let amount = amountField.text {
                 if from != "country" && to != "country" {
                     getConvertApiData(from: from, to: to, amount1: amount)
+    
                 } else {
                     warningMessage(message: "Please enter the country")
                 }
@@ -168,12 +168,14 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let favoritesViewController = FavoriteViewController()
         favoritesViewController.modalPresentationStyle = .fullScreen
+        favoritesViewController.selectedCurrency = selectedCurrencies
         favoritesViewController.delegate = self
         self.present(favoritesViewController, animated: true)
     }
     
     //MARK: Functions
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        resetApp()
         if sender.selectedSegmentIndex == 0 {
             compareView.isHidden = true
             convertView.isHidden = false
@@ -239,7 +241,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
                 self.firstCountryName.textColor = .black
                 if let countryName = self.firstCountryName.text {
                     if !self.selectedCurrencies.isEmpty {
-                        self.viewModel.api(base: countryName, country: self.selectedCurrencies)
+                        self.viewModel.fechFavouriteData(base: countryName, country: self.selectedCurrencies)
                     }
                     
                 }
@@ -302,6 +304,11 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         setup.editMainbuttons(mainButton: mainButton, favoriteButton: favouriteButton)
         
     }
+    func resetApp () {
+        amountField.text = ""
+        firstCountryName.text = "country"
+        firstCountryImage.image = UIImage(systemName: "globe.americas.fill")
+    }
     
 }
 extension HomeScreenViewController: FavoritesViewControllerProtocol {
@@ -309,7 +316,7 @@ extension HomeScreenViewController: FavoritesViewControllerProtocol {
         self.selectedCurrencies = currencies
         if let countryName = self.firstCountryName.text {
             if countryName != "country" {
-                self.viewModel.api(base: countryName, country: self.selectedCurrencies)
+                self.viewModel.fechFavouriteData(base: countryName, country: self.selectedCurrencies)
             }
         }
     }

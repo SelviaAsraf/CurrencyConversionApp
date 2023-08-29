@@ -34,7 +34,7 @@ class ViewModel {
         }
         
     }
-    func api(base: String, country: [String]) {
+    func fechFavouriteData(base: String, country: [String]) {
                 let country = country
                 var headers = HTTPHeaders()
                 headers["Content-Type"] = "application/json"
