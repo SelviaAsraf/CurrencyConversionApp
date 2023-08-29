@@ -9,6 +9,7 @@ target 'CurrencyConversionApp' do
   # Pods for CurrencyConversionApp
   pod "DropDown"
   pod "Alamofire"
+  pod "Kingfisher"
 
   target 'CurrencyConversionAppTests' do
     inherit! :search_paths

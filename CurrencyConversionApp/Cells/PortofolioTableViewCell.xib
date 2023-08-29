@@ -17,33 +17,45 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="globe.asia.australia.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wku-cf-2GE">
-                        <rect key="frame" x="10" y="19" width="56" height="48"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe.asia.australia.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wku-cf-2GE">
+                        <rect key="frame" x="8" y="21" width="40" height="38.666666666666671"/>
                         <color key="tintColor" red="0.16738482599999999" green="0.16738482599999999" blue="0.16738482599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="MPF-6r-my6"/>
+                            <constraint firstAttribute="height" constant="40" id="WlU-DD-iu5"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0G1-U9-N21">
-                        <rect key="frame" x="89" y="19" width="111" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0G1-U9-N21">
+                        <rect key="frame" x="68" y="20" width="33.666666666666657" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CURRENCY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yn-ag-DHv">
-                        <rect key="frame" x="89" y="48" width="111" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENCY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yn-ag-DHv">
+                        <rect key="frame" x="68" y="46" width="89.333333333333314" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFa-yI-ttW">
-                        <rect key="frame" x="264" y="22" width="40" height="45"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFa-yI-ttW">
+                        <rect key="frame" x="280.33333333333331" y="30" width="21.666666666666686" height="20.333333333333329"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="wku-cf-2GE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="26p-L5-21R"/>
+                    <constraint firstAttribute="bottom" secondItem="wku-cf-2GE" secondAttribute="bottom" constant="8" id="4UJ-u9-dOy"/>
+                    <constraint firstItem="iFa-yI-ttW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="9B6-ZG-Dc5"/>
+                    <constraint firstItem="9Yn-ag-DHv" firstAttribute="leading" secondItem="wku-cf-2GE" secondAttribute="trailing" constant="20" id="Fv0-Xc-2AS"/>
+                    <constraint firstItem="wku-cf-2GE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="VNr-df-YHY"/>
+                    <constraint firstItem="0G1-U9-N21" firstAttribute="leading" secondItem="wku-cf-2GE" secondAttribute="trailing" constant="20" id="WhT-Ko-xnP"/>
+                    <constraint firstAttribute="trailing" secondItem="iFa-yI-ttW" secondAttribute="trailing" constant="18" id="YZV-cZ-QmC"/>
+                    <constraint firstItem="9Yn-ag-DHv" firstAttribute="top" secondItem="0G1-U9-N21" secondAttribute="bottom" constant="5" id="cYI-Xj-GCi"/>
+                    <constraint firstItem="0G1-U9-N21" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="qMP-cJ-HRR"/>
+                    <constraint firstAttribute="bottom" secondItem="iFa-yI-ttW" secondAttribute="bottom" constant="20" id="wAg-6B-zaR"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

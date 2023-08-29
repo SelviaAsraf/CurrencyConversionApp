@@ -3,4 +3,207 @@
    uuid = "1DDDB4D7-8D3C-40EB-86E1-658557D9E526"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "46F79CEA-A2DA-432C-85A3-F1DFD223BABA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CurrencyConversionApp/Models/ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "api(base:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "46F79CEA-A2DA-432C-85A3-F1DFD223BABA - 322a2067292af64"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CurrencyConversionApp.ViewModel.api(base: Swift.String) -&gt; ()"
+                  moduleName = "CurrencyConversionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/selviaashraf/Downloads/CurrencyConversionApp/CurrencyConversionApp/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "1672">
+               </Location>
+               <Location
+                  uuid = "46F79CEA-A2DA-432C-85A3-F1DFD223BABA - 322a2067292af64"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CurrencyConversionApp.ViewModel.api(base: Swift.String) -&gt; ()"
+                  moduleName = "CurrencyConversionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/selviaashraf/Downloads/CurrencyConversionApp/CurrencyConversionApp/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "1644">
+               </Location>
+               <Location
+                  uuid = "46F79CEA-A2DA-432C-85A3-F1DFD223BABA - 322a2067292af64"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CurrencyConversionApp.ViewModel.api(base: Swift.String) -&gt; ()"
+                  moduleName = "CurrencyConversionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/selviaashraf/Downloads/CurrencyConversionApp/CurrencyConversionApp/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "1992">
+               </Location>
+               <Location
+                  uuid = "46F79CEA-A2DA-432C-85A3-F1DFD223BABA - 322a2067292af64"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CurrencyConversionApp.ViewModel.api(base: Swift.String) -&gt; ()"
+                  moduleName = "CurrencyConversionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/selviaashraf/Downloads/CurrencyConversionApp/CurrencyConversionApp/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "1916">
+               </Location>
+               <Location
+                  uuid = "46F79CEA-A2DA-432C-85A3-F1DFD223BABA - 322a2067292af64"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CurrencyConversionApp.ViewModel.api(base: Swift.String) -&gt; ()"
+                  moduleName = "CurrencyConversionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/selviaashraf/Downloads/CurrencyConversionApp/CurrencyConversionApp/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "2412">
+               </Location>
+               <Location
+                  uuid = "46F79CEA-A2DA-432C-85A3-F1DFD223BABA - 3b9410df9e29f59a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CurrencyConversionApp.ViewModel.api(base: Swift.String, country: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "CurrencyConversionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/selviaashraf/Downloads/CurrencyConversionApp/CurrencyConversionApp/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "1500">
+               </Location>
+               <Location
+                  uuid = "46F79CEA-A2DA-432C-85A3-F1DFD223BABA - 3b9410df9e29f59a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CurrencyConversionApp.ViewModel.api(base: Swift.String, country: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "CurrencyConversionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/selviaashraf/Downloads/CurrencyConversionApp/CurrencyConversionApp/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "1848">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B30EFEF7-2B2C-473C-9AB3-F9520C27E3DA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CurrencyConversionApp/Models/ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "api(base:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B30EFEF7-2B2C-473C-9AB3-F9520C27E3DA - 322a2067292afcb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CurrencyConversionApp.ViewModel.api(base: Swift.String) -&gt; ()"
+                  moduleName = "CurrencyConversionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/selviaashraf/Downloads/CurrencyConversionApp/CurrencyConversionApp/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "1584">
+               </Location>
+               <Location
+                  uuid = "B30EFEF7-2B2C-473C-9AB3-F9520C27E3DA - 322a2067292af05"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CurrencyConversionApp.ViewModel.api(base: Swift.String) -&gt; ()"
+                  moduleName = "CurrencyConversionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/selviaashraf/Downloads/CurrencyConversionApp/CurrencyConversionApp/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1672">
+               </Location>
+               <Location
+                  uuid = "B30EFEF7-2B2C-473C-9AB3-F9520C27E3DA - 322a2067292af05"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CurrencyConversionApp.ViewModel.api(base: Swift.String) -&gt; ()"
+                  moduleName = "CurrencyConversionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/selviaashraf/Downloads/CurrencyConversionApp/CurrencyConversionApp/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1956">
+               </Location>
+               <Location
+                  uuid = "B30EFEF7-2B2C-473C-9AB3-F9520C27E3DA - 3b9410df9e29f5fb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CurrencyConversionApp.ViewModel.api(base: Swift.String, country: Swift.Array&lt;Swift.String&gt;) -&gt; ()"
+                  moduleName = "CurrencyConversionApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/selviaashraf/Downloads/CurrencyConversionApp/CurrencyConversionApp/Models/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "1528">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

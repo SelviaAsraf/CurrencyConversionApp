@@ -9,35 +9,33 @@ import Foundation
 import UIKit
 import DropDown
 
-let country = ["egypt","swiss","hhhdh","fytdf"]
 class setupUI{
-    func setUpFieldsAndlabels(field: UITextField , label: UILabel) {
-        
-        field.backgroundColor = .systemGray6
-        field.layer.cornerRadius = 15
-        field.layer.masksToBounds = true
-        field.frame.size.height = 50
+    func setUpLabels(label: UILabel) {
         
         label.backgroundColor = .systemGray6
         label.layer.cornerRadius = 15
         label.layer.masksToBounds = true
         label.frame.size.height = 50
-        
-        
     }
-    func setUpDropDrown(dropDownButton: DropDown , view: UIView, countryName: UILabel) {
+    func setUpFields(field: UITextField) {
         
+        field.backgroundColor = .systemGray6
+        field.layer.cornerRadius = 15
+        field.layer.masksToBounds = true
+        field.frame.size.height = 50
+    
+    }
+    func setUpDropDrown(dropDownButton: DropDown , view: UIView)
+    {
+
         dropDownButton.anchorView = view
-        dropDownButton.dataSource = country
         dropDownButton.bottomOffset = CGPoint(x: 0, y: (dropDownButton.anchorView?.plainView.bounds.height)!)
         dropDownButton.topOffset = CGPoint(x: 0, y: -(dropDownButton.anchorView?.plainView.bounds.height)!)
         dropDownButton.direction = .bottom
-        dropDownButton.selectionAction = {(index: Int, item: String) in
-            countryName.text = country[index]
-            countryName.textColor = .black
-            
-        }
+  
+
     }
+
     func setupSegmentedControl (segmentedControl: UISegmentedControl, homeView: UIView) {
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -54,5 +52,30 @@ class setupUI{
         button.layer.masksToBounds = true
         button.frame.size.height = 70
     }
+    func CustomHeader(title: String, tableView: UITableView) {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 80))
+        let titleLabel = UILabel(frame: CGRect(x: 10, y: 20, width: tableView.frame.width, height: 50))
+        titleLabel.text = title
+        titleLabel.textAlignment = .left
+        titleLabel.font = .boldSystemFont(ofSize: 20)
+        titleLabel.textColor = UIColor.black
+        titleLabel.backgroundColor = .systemGray6
+        headerView.addSubview(titleLabel)
+        // Set the header view for the table view
+        tableView.tableHeaderView = headerView
+    }
+    func editMainbuttons(mainButton: UIButton,favoriteButton: UIButton) {
+        mainButton.layer.cornerRadius = 15
+        mainButton.layer.masksToBounds = true
+        
+        favoriteButton.layer.cornerRadius = 14
+        favoriteButton.layer.masksToBounds = true
+        favoriteButton.frame.size.height = 35
+        favoriteButton.frame.size.width = 140
+        favoriteButton.layer.borderWidth = 0.5
+        favoriteButton.layer.borderColor = UIColor.black.cgColor
+    }
+
+ 
     
 }

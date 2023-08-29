@@ -5,95 +5,83 @@
 ////  Created by Selvia Ashraf on 27/08/2023.
 ////
 //
-//import Foundation
-//
-//// MARK: - ConvertData
-//struct ConvertData: Codable {
-//    let statusCode: Int
-//    let isSuccess: Bool
-//    let data: DataClass
-//}
-//
-//// MARK: - DataClass
-//struct DataClass: Codable {
-//    let source, destination: String
-//    let amount: Double
-//}
-//// MARK: - Currencies
-//struct Currencies: Codable {
-//    let statusCode: Int
-//    let isSuccess: Bool
-//    let data: [Datum]
-//}
-//
-//// MARK: - Datum
-//struct Datum: Codable {
-//    let code, name: String
-//    let imageURL: String
-//
-//    enum CodingKeys: String, CodingKey {
-//        case code, name
-//        case imageURL = "imageUrl"
-//    }
-//}
-//
-//  Model.swift
-//  CurrencyConversion
-//
-//  Created by esterelzek on 22/08/2023.
-//
-
 import Foundation
-
-// MARK: - CurrencyModel
-struct CurrencyModel: Codable {
-    let baseCode: String
-    let conversionRates: ConversionRates
-
-    enum CodingKeys: String, CodingKey {
-        case baseCode = "base_code"
-        case conversionRates = "conversion_rates"
-    }
+//https://graduationprojectbm.up.railway.app/api/v1/currency/conversion?from=KWD&to1=EGP&amount=2
+// MARK: - ConvertData
+struct ConvertData: Codable {
+    let statusCode: Int
+    let isSuccess: Bool
+    let data: ConvertClass
 }
 
-// MARK: - ConversionRates
-struct ConversionRates: Codable {
-    let aed, jpy, eur, qar: String
-    let gbp, omr, sar, usd: String
-    let kwd, bhd: String
-
-    enum CodingKeys: String, CodingKey {
-        case aed = "AED"
-        case jpy = "JPY"
-        case eur = "EUR"
-        case qar = "QAR"
-        case gbp = "GBP"
-        case omr = "OMR"
-        case sar = "SAR"
-        case usd = "USD"
-        case kwd = "KWD"
-        case bhd = "BHD"
-    }
+// MARK: - DataClass
+struct ConvertClass: Codable {
+    let source, destination: String
+    let amount: Double
+}
+// MARK: - CompareData
+//https://graduationprojectbm.up.railway.app/api/v1/currency/conversion?from=KWD&to1=EGP&amount=2&to2=USD
+struct CompareData: Codable {
+    let statusCode: Int
+    let isSuccess: Bool
+    let data: CompareClass
 }
 
+// MARK: - DataClass
+struct CompareClass: Codable {
+    let source, destination1, destination2: String
+    let amount1, amount2: Double
+}
 
+//MARK: - Currencies
+struct Currencies: Codable {
+    let statusCode: Int
+    let isSuccess: Bool
+    let data: [Datum]
+}
 
-////
-// MARK: - CurrencyModelElement
-struct CurrencyModelElement: Codable {
-    let currencyCode: String
+// MARK: - Datum
+struct Datum: Codable {
+    let code, name: String
     let imageURL: String
-    var isSelected: Bool?
-    var rate: String?
 
     enum CodingKeys: String, CodingKey {
-        case currencyCode = "currency_code"
-        case imageURL = "image_url"
-        case isSelected, rate
+        case code, name
+        case imageURL = "imageUrl"
+       
     }
 }
 
-typealias CurrencyModelImagese = [CurrencyModelElement]
+// MARK: - FavouriteRateData
+struct FavouriteRateData: Codable {
+    let statusCode: Int
+    let isSuccess: Bool
+    let data: FavouriteData
+}
+
+// MARK: - DataClass
+struct FavouriteData: Codable {
+    let base: String
+    let currencies: [Currency]
+}
+
+// MARK: - Currency
+struct Currency: Codable {
+    let code, name: String
+    let imageURL: String
+    let rate: Double
+
+    enum CodingKeys: String, CodingKey {
+        case code, name
+        case imageURL = "imageUrl"
+        case rate
+    }
+}
+
+
+
+
+
 
 
 

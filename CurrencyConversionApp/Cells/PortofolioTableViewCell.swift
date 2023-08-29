@@ -25,4 +25,10 @@ class PortofolioTableViewCell: UITableViewCell {
     static func nib() -> UINib {
         return UINib(nibName: "PortofolioTableViewCell", bundle: nil)
     }
+    func configure(model: Currency) {
+        countryImage.kf.setImage(with: URL(string:model.imageURL ))
+        countryName.textColor = .black
+        countryName.text = model.code
+        countryRate.text = "\(model.rate)"
+    }
 }
